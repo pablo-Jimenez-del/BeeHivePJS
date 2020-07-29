@@ -21,6 +21,7 @@ class UIManager {
     this.beeComponentSelected = beeComponent;
     this.appComponent.postsComponent.showBeePosts(beeComponent.model,resetPosition);
     this.appComponent.albumsComponent.showBeePhotos(beeComponent.model, resetPosition);
+    this.appComponent.todosComponent.showBeeTodos(beeComponent.model, resetPosition);
   }
 
   hideCommentForm() {

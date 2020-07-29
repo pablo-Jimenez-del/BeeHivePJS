@@ -9,7 +9,7 @@ class Post {
 
   addComment(comment) {
     if (comment.postId === this.id) {
-      //Preguntar que es el unshift, si es para girar un arreglo.. preguntar
+      //El unshift sirve para darle vuelta al objeto
       this.comments.unshift(comment);
     }
   }

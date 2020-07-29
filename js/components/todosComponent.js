@@ -6,4 +6,15 @@ class TodosComponent extends Component {
     this.container.classList.add("col-sm-3");
     this.container.classList.add("todosComponent");
   }
+  
+  showBeeTodos(bee, resetPosition) {
+    if (resetPosition) {
+      this.container.scrollTo(0, 0);
+    }
+    this.container.innerHTML = "";
+
+   bee.todos.forEach((todo) => {
+      var todoComponent = new TodoComponent(this.container, todo);
+    });
+  }
 }

@@ -23,12 +23,16 @@ class CommentFormComponent extends Component {
     this.cancelBtn.innerHTML = "Cancelar";
     this.formBackground.appendChild(this.cancelBtn);
     this.cancelBtn.classList.add("cancelBtn");
+    this.cancelBtn.classList.add('btn');
+    this.cancelBtn.classList.add('btn-primary');
     this.cancelBtn.onclick = this.onCancelButton.bind(this);
 
     this.enviarBtn = document.createElement("button");
     this.enviarBtn.innerHTML = "Enviar";
     this.formBackground.appendChild(this.enviarBtn);
     this.enviarBtn.classList.add("enviarBtn");
+    this.enviarBtn.classList.add('btn');
+    this.enviarBtn.classList.add('btn-primary');
     this.enviarBtn.onclick = this.onEnviarButton.bind(this);
 
     //No se muestra el boton
@@ -70,8 +74,11 @@ class CommentFormComponent extends Component {
       return false;
     } else {
       Swal.fire({
-        icon: "success",
-        title: "Comentario añadido",
+        position: 'Center',
+        icon: 'success',
+        title: 'Comentario Añadido',
+        showConfirmButton: false,
+        timer: 1900
       });
       document.getElementById("inputTitleForm").value = "";
       document.getElementById("textareaForm").value = "";

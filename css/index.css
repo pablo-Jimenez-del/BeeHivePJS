@@ -15,6 +15,10 @@ body h2,
 button {
   font-family: "Epilogue", sans-serif;
 }
+.btn-primary{
+  font-weight: bold;
+  margin: 13px 12px 12px 10px;
+}
 /*COLUMNAS*/
 .appComponent {
   height: 100%;
@@ -22,28 +26,32 @@ button {
   position: absolute;
 }
 .headerComponent {
-  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  background: #E7ECEF;
   width: 100%;
   height: 60px;
 }
 .beeComponent {
-  padding-bottom: 65px;
   text-align: center;
 }
+.raya {
+  border: 1px solid;
+}
 .beesComponent {
-  background: linear-gradient(to bottom, #acb6e5, #74ebd5);
+  /*background: linear-gradient(to bottom, #acb6e5, #74ebd5);*/
+  background: #E7ECEF;
   height: 100vh;
   float: left;
   overflow: scroll;
 }
 .postsComponent {
-  background: linear-gradient(to bottom, #acb6e5, #74ebd5);
+  /*background: linear-gradient(to bottom, #acb6e5, #74ebd5);*/
+  background: #E7ECEF;
   height: 100vh;
   float: left;
   overflow: scroll;
 }
 .albumComponent {
-  background: linear-gradient(to bottom, #acb6e5, #74ebd5);
+  background: #E7ECEF;
   height: 100vh;
   float: left;
   overflow: scroll;
@@ -53,9 +61,14 @@ button {
   justify-content: center;
 }
 .todosComponent {
-  background-color: #2a16e4;
+  background: #E7ECEF;
   height: 100vh;
   float: left;
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 /*INFO BEECOMPONENT*/
 .beeName {
@@ -72,8 +85,7 @@ button {
   font-weight: 600;
 }
 .beeImage {
-  padding-top: 17px;
-  padding-left: 9px;
+  padding-top: 12px;
 }
 .beePhone {
   font-size: 16px;
@@ -83,180 +95,8 @@ button {
   font-size: 16px;
   font-weight: 600;
 }
-.infoPost {
-  font-size: 14px;
-  font-weight: 600;
-  float: left;
-  padding-left: 40px;
-}
-.infoPhoto {
-  font-size: 14px;
-  font-weight: 600;
-  float: left;
-  padding-left: 17px;
-}
-.infoTodo {
-  font-size: 14px;
-  font-weight: 600;
-  float: left;
-  padding-left: 18px;
-}
 .divButtons {
-  padding-top: 72px;
-}
-.buttonPost {
-  background-color: transparent;
-  border: transparent;
-  transform: translate(-50%, -50%);
-  padding: 10px 10px;
-  text-transform: uppercase;
-  color: #000000;
-  letter-spacing: 2px;
-  font-weight: bold;
-  font-size: 16px;
-  position: absolute;
-  left: 60px;
-}
-.buttonPost:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #ffe117;
-  z-index: -1;
-  transition: transform 0.5s;
-  transform-origin: bottom right;
-  transform: scale(0);
-}
-.buttonPost:hover:before {
-  transition: transform 0.5s;
-  transform-origin: top left;
-  transform: scale(1);
-}
-.buttonPost:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: 2px solid #fff;
-  z-index: -1;
-  transition: transform 0.5s;
-  box-sizing: border-box;
-  transform-origin: bottom right;
-  transform: scale(1);
-}
-.buttonPost:hover:after {
-  transition: transform 0.5s;
-  transform-origin: bottom right;
-  transform: scale(0);
-}
-.buttonAlbum {
-  background-color: transparent;
-  border: transparent;
-  transform: translate(-50%, -50%);
-  padding: 10px 10px;
-  text-transform: uppercase;
-  color: #000000;
-  letter-spacing: 2px;
-  font-weight: bold;
-  font-size: 16px;
-  position: absolute;
-  left: 160px;
-}
-.buttonAlbum:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #ffe117;
-  z-index: -1;
-  transition: transform 0.5s;
-  transform-origin: bottom right;
-  transform: scale(0);
-}
-.buttonAlbum:hover:before {
-  transition: transform 0.5s;
-  transform-origin: top left;
-  transform: scale(1);
-}
-.buttonAlbum:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: 2px solid #fff;
-  z-index: -1;
-  transition: transform 0.5s;
-  box-sizing: border-box;
-  transform-origin: bottom right;
-  transform: scale(1);
-}
-.buttonAlbum:hover:after {
-  transition: transform 0.5s;
-  transform-origin: bottom right;
-  transform: scale(0);
-}
 
-.buttonTodo {
-  background-color: transparent;
-  border: transparent;
-  transform: translate(-50%, -50%);
-  padding: 10px 10px;
-  text-transform: uppercase;
-  color: #000000;
-  letter-spacing: 2px;
-  font-weight: bold;
-  font-size: 16px;
-  position: absolute;
-  left: 255px;
-}
-.buttonTodo:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #ffe117;
-  z-index: -1;
-  transition: transform 0.5s;
-  transform-origin: bottom right;
-  transform: scale(0);
-}
-.buttonTodo:hover:before {
-  transition: transform 0.5s;
-  transform-origin: top left;
-  transform: scale(1);
-}
-.buttonTodo:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: 2px solid #fff;
-  z-index: -1;
-  transition: transform 0.5s;
-  box-sizing: border-box;
-  transform-origin: bottom right;
-  transform: scale(1);
-}
-.buttonTodo:hover:after {
-  transition: transform 0.5s;
-  transform-origin: bottom right;
-  transform: scale(0);
 }
 
 /*Loader*/
@@ -656,9 +496,8 @@ button {
 
 /*Posts*/
 .postComponent {
-  min-height: 100px;
-  margin: 5px 5px 0px 5px;
-  padding: 5px 5px 5px 5px;
+  width: 100%;
+  padding-top: 15px;
 }
 .postTitle {
   font-size: 20px;
@@ -671,8 +510,6 @@ button {
 }
 /*Comments*/
 .commentComponent {
-  position: relative;
-  top: 70px;
 }
 .addComentBtn {
   background-color: transparent;
@@ -730,12 +567,12 @@ button {
 .commentName {
   font-size: 18px;
   font-weight: bold;
+  padding: 60px 5px 5px 5px;
 }
 .commentBody {
   font-size: 14px;
 }
 .commentEmail {
-  padding-left: 123px;
   font-family: "Epilogue", sans-serif;
   font-weight: bolder;
 }
@@ -779,119 +616,10 @@ button {
   background-color: #eee;
   font-size: 1.3em;
 }
-.cancelBtn {
-  position: absolute;
-  top: 69%;
-  left: 44%;
-  background-color: transparent;
-  border: transparent;
-  transform: translate(-50%, -50%);
-  padding: 15px 30px;
-  text-transform: uppercase;
-  color: #fff;
-  letter-spacing: 2px;
-  font-size: 20px;
-  font-weight: 600;
-}
-.cancelBtn:hover {
-  color: #000000;
-}
-.cancelBtn:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, #acb6e5, #74ebd5);
-  z-index: -1;
-  transition: transform 0.5s;
-  transform-origin: bottom right;
-  transform: scale(0);
-}
-.cancelBtn:hover:before {
-  transition: transform 0.5s;
-  transform-origin: top left;
-  transform: scale(1);
-}
-.cancelBtn:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: 2px solid #fff;
-  z-index: -1;
-  transition: transform 0.5s;
-  box-sizing: border-box;
-  transform-origin: bottom right;
-  transform: scale(1);
-}
-.cancelBtn:hover:after {
-  transition: transform 0.5s;
-  transform-origin: bottom right;
-  transform: scale(0);
-}
-.enviarBtn {
-  position: absolute;
-  top: 69%;
-  left: 57%;
-  background-color: transparent;
-  border: transparent;
-  transform: translate(-50%, -50%);
-  padding: 15px 30px;
-  text-transform: uppercase;
-  color: #fff;
-  letter-spacing: 2px;
-  font-size: 20px;
-  font-weight: 600;
-}
-.enviarBtn:hover {
-  color: #000000;
-}
-.enviarBtn:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, #acb6e5, #74ebd5);
-  z-index: -1;
-  transition: transform 0.5s;
-  transform-origin: bottom right;
-  transform: scale(0);
-}
-.enviarBtn:hover:before {
-  transition: transform 0.5s;
-  transform-origin: top left;
-  transform: scale(1);
-}
-.enviarBtn:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: 2px solid #fff;
-  z-index: -1;
-  transition: transform 0.5s;
-  box-sizing: border-box;
-  transform-origin: bottom right;
-  transform: scale(1);
-}
-.enviarBtn:hover:after {
-  transition: transform 0.5s;
-  transform-origin: bottom right;
-  transform: scale(0);
-}
 .swal2-styled.swal2-confirm {
-  background-color: #ffe117 !important;
-  color: #000000 !important;
+  background-color: #007bff;
+  border-color: #007bff;
+  font-weight: bold;
 }
 .swal2-title {
   color: #000000 !important;
@@ -902,11 +630,11 @@ button {
   height: auto;
   margin: 0px 0px 10px 0px;
 }
-.thumbnail{
+.thumbnail {
   width: 100%;
   height: auto;
 }
-.photo{
+.photo {
   max-width: 450px;
   height: auto;
 }
@@ -921,65 +649,17 @@ button {
   justify-content: center;
   align-items: center;
 }
-
-
-
-
-
-
-
-@media (max-width: 500px) {
-  .beesComponent {
-    width: 100% !important;
-  }
-  .postsComponent {
-    display: none;
-    width: 100%;
-  }
-  .albumComponent {
-    display: none;
-    width: 100%;
-  }
-  .todosComponent {
-    display: none;
-    width: 100%;
-  }
-  .enviarBtn {
-    left: 70%;
-  }
-  .cancelBtn {
-    left: 35%;
-  }
+/*Todo Component*/
+.todoComponent {
+  background: #ffe117;
+  min-height: 50px;
+  width: 96%;
+  height: auto;
+  margin: 0px 2% 2% 2%;
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  align-items: center;
 }
-
-@media (max-width: 575px) {
-  .beesComponent {
-    width: 50%;
-  }
-  .postsComponent {
-    width: 50%;
-  }
-  .albumComponent {
-    display: none;
-    width: 50%;
-  }
-  .todosComponent {
-    display: none;
-    width: 50%;
-  }
-  .enviarBtn {
-    left: 70%;
-  }
-  .cancelBtn {
-    left: 35%;
-  }
-}
-@media (min-width: 576px) and (max-width: 767px) {
-}
-@media (min-width: 768px) and (max-width: 991px) {
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-}
-@media (min-width: 1200px) {
+.todoComponentCompleted{
+  background: #505050;
 }
