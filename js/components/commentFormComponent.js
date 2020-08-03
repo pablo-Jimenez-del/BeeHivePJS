@@ -28,8 +28,9 @@ class CommentFormComponent extends Component {
 
     this.iconOne = document.createElement("i");
     this.iconOne.innerText = "Titulo";
-    this.iconOne.classList.add("fas");
-    this.iconOne.classList.add("fa-marker");
+    // this.iconOne.classList.add("fas");
+    // this.iconOne.classList.add('fa-marker');
+    this.iconOne.setAttribute('class', 'fas fa-marker');
     this.labelTitulo.appendChild(this.iconOne);
 
     this.inputTitulo = document.createElement("input");
@@ -46,8 +47,8 @@ class CommentFormComponent extends Component {
     this.field.appendChild(this.labelMessage);
 
     this.iconMessage = document.createElement("i");
-    this.iconMessage.classList.add("far");
     this.iconMessage.innerHTML = "Comentario";
+    this.iconMessage.classList.add("far");
     this.iconMessage.classList.add("fa-edit");
     this.labelMessage.appendChild(this.iconMessage);
 
@@ -78,7 +79,7 @@ class CommentFormComponent extends Component {
     this.enviarBtn.onclick = this.onEnviarButton.bind(this);
 
     //No se muestra el boton
-    this.hide();
+    // this.hide();
   }
 
   hide() {

@@ -19,7 +19,7 @@ class UIManager {
   refreshPostsComponent(beeComponent, resetPosition) {
     //le dice el appComponent que muestre los posts del bee  en el postComponent
     this.beeComponentSelected = beeComponent;
-    this.appComponent.postsComponent.showBeePosts(beeComponent.model,resetPosition);
+    this.appComponent.postsComponent.showBeePosts(beeComponent.model, resetPosition);
     this.appComponent.albumsComponent.showBeePhotos(beeComponent.model, resetPosition);
     this.appComponent.todosComponent.showBeeTodos(beeComponent.model, resetPosition);
   }
@@ -30,21 +30,22 @@ class UIManager {
 
   addNewComment(title, body) {
     var comment = new PostComment(
-    this.postReceivingComment.comments.length,this.postReceivingComment.id,title,body,AppManager.getInstance().owner.email);
+      this.postReceivingComment.comments.length, this.postReceivingComment.id, title, body, AppManager.getInstance().owner.email);
     this.postReceivingComment.addComment(comment);
     this.refreshPostsComponent(this.beeComponentSelected, false);
     this.appComponent.commentFormComponent.hide();
   }
+
   showCommentForm(post) {
     this.postReceivingComment = post;
     this.appComponent.commentFormComponent.show();
   }
 
-  showImage(photo){
+  showImage(photo) {
     this.appComponent.photoComponent.showImage(photo);
   }
 
-  hideImage(){
+  hideImage() {
     this.appComponent.photoComponent.hide();
   }
 
