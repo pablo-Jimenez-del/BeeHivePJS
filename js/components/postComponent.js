@@ -18,6 +18,8 @@ class PostComponent extends Component {
     this.addCommentBtn = document.createElement("button");
     this.addCommentBtn.classList.add('btn');
     this.addCommentBtn.classList.add('btn-primary');
+    this.addCommentBtn.style.width = '250px';
+    this.addCommentBtn.style.marginLeft = '3px';
     this.addCommentBtn.classList.add('btnAddComment');
 
     this.addCommentBtn.innerHTML = "Añadir Comentario ▼";

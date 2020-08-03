@@ -14,6 +14,7 @@ class BeeComponent extends Component {
     beeImage.src = model.image;
     beeImage.classList.add("beeImage");
     this.container.appendChild(beeImage);
+    gsap.from(beeImage, {duration: 5, opacity: 0, ease: "slow(0.5, 0.8, true)"});
 
     var beeName = document.createElement("p");
     beeName.innerHTML = model.name;
