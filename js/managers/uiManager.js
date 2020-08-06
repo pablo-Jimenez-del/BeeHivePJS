@@ -26,19 +26,34 @@ class UIManager {
 
   hideCommentForm() {
     this.appComponent.commentFormComponent.hide();
+    this.appComponent.postFormComponent.hide();
   }
+
+
 
   addNewComment(title, body) {
     var comment = new PostComment(
-      this.postReceivingComment.comments.length, this.postReceivingComment.id, title, body, AppManager.getInstance().owner.email);
+    this.postReceivingComment.comments.length,this.postReceivingComment.id, title, body, AppManager.getInstance().owner.email);
     this.postReceivingComment.addComment(comment);
     this.refreshPostsComponent(this.beeComponentSelected, false);
     this.appComponent.commentFormComponent.hide();
   }
 
+  addNewPost(title, body) {
+   var post = new Post(-1 , body, title, AppManager.getInstance().owner.userId);
+   AppManager.getInstance().owner.posts.unshift(post);
+  this.beeComponentSelected = this.appComponent.beesComponent.findOwnerBeeComponent();
+    this.refreshPostsComponent(this.beeComponentSelected, false);
+    this.appComponent.postFormComponent.hide();
+  }
+
   showCommentForm(post) {
     this.postReceivingComment = post;
     this.appComponent.commentFormComponent.show();
+  }
+
+  showPostForm() {
+    this.appComponent.postFormComponent.show();
   }
 
   showImage(photo) {
