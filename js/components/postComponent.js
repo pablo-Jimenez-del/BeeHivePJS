@@ -16,12 +16,7 @@ class PostComponent extends Component {
 
     //Agregar comentarios debajo de los posts
     this.addCommentBtn = document.createElement("button");
-    this.addCommentBtn.classList.add('btn');
-    this.addCommentBtn.classList.add('btn-primary');
-    this.addCommentBtn.style.width = '250px';
-    this.addCommentBtn.style.marginLeft = '3px';
     this.addCommentBtn.classList.add('btnAddComment');
-
     this.addCommentBtn.innerHTML = "Añadir Comentario ▼";
     this.addCommentBtn.id = 'addCommentBtn';
     this.addCommentBtn.onclick = this.onAddCommentOnClick.bind(this);

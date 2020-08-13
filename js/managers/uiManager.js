@@ -27,6 +27,7 @@ class UIManager {
   hideCommentForm() {
     this.appComponent.commentFormComponent.hide();
     this.appComponent.postFormComponent.hide();
+    this.appComponent.todoFormComponent.hide();
   }
 
 
@@ -42,11 +43,19 @@ class UIManager {
   addNewPost(title, body) {
    var post = new Post(-1 , body, title, AppManager.getInstance().owner.userId);
    AppManager.getInstance().owner.posts.unshift(post);
-  this.beeComponentSelected = this.appComponent.beesComponent.findOwnerBeeComponent();
-    this.refreshPostsComponent(this.beeComponentSelected, false);
-    this.appComponent.postFormComponent.hide();
+   this.beeComponentSelected = this.appComponent.beesComponent.findOwnerBeeComponent();
+   this.refreshPostsComponent(this.beeComponentSelected, false);
+   this.appComponent.postFormComponent.hide();
   }
 
+  addNewTodo(title){
+    var todo = new Todo(0, title, this.beeComponentSelected.model.id, false);
+    this.beeComponentSelected.model.todos.unshift(todo);
+    this.refreshPostsComponent(this.beeComponentSelected,true, 'todos');
+    this.appManager.dataManager.postTodo(todo);
+    this.appComponent.todoFormComponent.hide();
+
+  }
   showCommentForm(post) {
     this.postReceivingComment = post;
     this.appComponent.commentFormComponent.show();
@@ -54,6 +63,10 @@ class UIManager {
 
   showPostForm() {
     this.appComponent.postFormComponent.show();
+  }
+
+  showTodoForm() {
+    this.appComponent.todoFormComponent.show();
   }
 
   showImage(photo) {

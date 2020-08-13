@@ -49,21 +49,21 @@ class BeeComponent extends Component {
     this.buttonPost = document.createElement("button");
     this.buttonPost.innerHTML = "Posts";
     this.buttonPost.classList.add('btn');
-    this.buttonPost.classList.add('btn-primary');
+    this.buttonPost.classList.add('postBtn');
     this.divButtons.appendChild(this.buttonPost);
     this.buttonPost.onclick = this.onBtnPost.bind(this);
 
     this.buttonAlbum = document.createElement("button");
     this.buttonAlbum.innerHTML = "Album";
     this.buttonAlbum.classList.add('btn');
-    this.buttonAlbum.classList.add('btn-primary');
+    this.buttonAlbum.classList.add('albumBtn');
     this.divButtons.appendChild(this.buttonAlbum);
     this.buttonAlbum.onclick = this.onBtnAlbum.bind(this);
 
     this.buttonTodo = document.createElement("button");
     this.buttonTodo.innerHTML = "Todo";
     this.buttonTodo.classList.add('btn');
-    this.buttonTodo.classList.add('btn-primary');
+    this.buttonTodo.classList.add('todoBtn');
     this.divButtons.appendChild(this.buttonTodo);
     this.buttonTodo.onclick = this.onBtnTodo.bind(this);
 

@@ -9,8 +9,9 @@ class ThumbnailComponent extends Component{
         this.img.classList.add('thumbnail');
         this.container.appendChild(this.img);
 
-        this.title = document.createElement('h3');
+        this.title = document.createElement('p');
         this.title.innerHTML = this.model.title;
+        this.title.classList.add('titleThumnail');
         this.container.appendChild(this.title);
 
         this.container.onclick = this.onThumbnailClick.bind(this);

@@ -28,9 +28,7 @@ class PostFormComponent extends Component {
 
     this.iconOne = document.createElement("i");
     this.iconOne.innerText = "Titulo";
-    this.iconOne.classList.add("fas");
-    this.iconOne.classList.add("fa-marker");
-    // this.iconOne.setAttribute('class', 'fas fa-marker');
+    this.iconOne.setAttribute("class", "fas fa-marker");
     this.labelTitulo.appendChild(this.iconOne);
 
     this.inputTitulo = document.createElement("input");
@@ -48,8 +46,7 @@ class PostFormComponent extends Component {
 
     this.iconMessage = document.createElement("i");
     this.iconMessage.innerHTML = "Comentario";
-    this.iconMessage.classList.add("far");
-    this.iconMessage.classList.add("fa-edit");
+    this.iconMessage.setAttribute("class", "fas fa-edit");
     this.labelMessage.appendChild(this.iconMessage);
 
     this.textareaMessage = document.createElement("textarea");
@@ -61,19 +58,13 @@ class PostFormComponent extends Component {
     this.cancelBtn = document.createElement("button");
     this.cancelBtn.innerHTML = "Cancelar";
     this.formBackground.appendChild(this.cancelBtn);
-    this.cancelBtn.classList.add("cancelBtn");
-    this.cancelBtn.classList.add("btn");
-    this.cancelBtn.classList.add("btn-primary");
-    this.cancelBtn.style.width = "150px";
+    this.cancelBtn.classList.add("cancelBtnNewPost");
     this.cancelBtn.onclick = this.onCancelButton.bind(this);
 
     this.enviarBtn = document.createElement("button");
     this.enviarBtn.innerHTML = "Enviar";
     this.formBackground.appendChild(this.enviarBtn);
-    this.enviarBtn.classList.add("enviarBtn");
-    this.enviarBtn.classList.add("btn");
-    this.enviarBtn.classList.add("btn-primary");
-    this.enviarBtn.style.width = "150px";
+    this.enviarBtn.classList.add("enviarBtnNewPost");
     this.enviarBtn.onclick = this.onEnviarButton.bind(this);
 
     //No se muestra el formulario del nuevo post

@@ -139,7 +139,21 @@ class DataManager {
     var request = e.target;
     if (request.status === 200) {
       var data = JSON.parse(request.responseText);
-      for (let i = 0; i < data.length; i++) {
+
+      for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          const todoData = data[key];
+          var todo = new Todo(
+            key,
+            todoData.title,
+            todoData.userId,
+            todoData.completed
+          );
+          this.addTodoToBee(todo);
+        }
+      }
+
+      /* for (let i = 0; i < data.length; i++) {
         const todoData = data[i];
         var todo = new Todo(
           todoData.id,
@@ -148,12 +162,25 @@ class DataManager {
           todoData.completed
         );
         this.addTodoToBee(todo);
-      }
+      } */
       console.log(this.bees);
       this.appManager.uiManager.showUI();
     } else {
       console.log("Error on request: todos");
     }
+  }
+
+  postTodo() {
+    //Guardar Todo
+    var request = new XMLHttpRequest();
+    request.open(
+      "POST",
+      "https://beehive-270a2.firebaseio.com/data/todos.json"
+    );
+    request.onload = function (e) {
+      console.log(e.target);
+    };
+    request.send(JSON.stringify(todo));
   }
 
   //agrega los TODOS al bee
@@ -164,6 +191,32 @@ class DataManager {
         return;
       }
     });
+  }
+
+  postTodo(todo) {
+    var request = new XMLHttpRequest();
+    request.open(
+      "POST",
+      "https://beehive-270a2.firebaseio.com/data/todos.json"
+    );
+    request.onload = function (e) {
+      var data = JSON.parse(e.target.response);
+      todo.id = data.name;
+      console.log(todo);
+    }
+    request.send(JSON.stringify(todo));
+  }
+
+//Actualiza el todo con la BD
+  putTodo(todo){
+    var request = new XMLHttpRequest();
+    request.open(
+      "PUT",
+      `https://beehive-270a2.firebaseio.com/data/todos/${todo.id}.json`);
+    request.onload = function (e) {
+      console.log(e.target);
+    }
+    request.send(JSON.stringify(todo));
   }
 
   //ALBUM EXTRAER

@@ -27,6 +27,5 @@ class PostsComponent extends Component {
 
   onNewPostBtn() {
     AppManager.getInstance().uiManager.showPostForm();
-    console.log("Hola");
   }
 }

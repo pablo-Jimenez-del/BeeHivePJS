@@ -4,25 +4,28 @@
     }
     .postsComponent {
       display: none;
-      width: 100%;
+      width: 100% !important;
+    }
+    .btnAddComment{
+      margin-left: 141px;
     }
     .albumComponent {
       display: none;
-      width: 100%;
+      width: 100% !important;
+    }
+    .thumbnail{
+      width: 60%;
     }
     .todosComponent {
       display: none;
+      width: 100 !important;
+    }
+    .divList{
       width: 100%;
-    }
-    .enviarBtn {
-      left: 70%;
-    }
-    .cancelBtn {
-      left: 35%;
     }
   }
 
-@media (max-width: 575px) {
+/* @media (max-width: 575px) {
     .beesComponent {
       width: 50%;
     }
@@ -37,20 +40,40 @@
       display: none;
       width: 50%;
     }
-    .enviarBtn {
-      left: 70%;
-    }
-    .cancelBtn {
-      left: 35%;
-    }
-  }
+  } */
   @media (min-width: 576px) and (max-width: 767px) {
   }
   @media (min-width: 768px) and (max-width: 991px) {
   }
   
+
+  /*Tablet
   @media (min-width: 992px) and (max-width: 1199px) {
+    .beesComponent {
+      width: 1000% !important;
+    }
+    .postsComponent {
+      width: 100% !important;
+    }
+    .btnAddComment{
+   
+    }
+    .albumComponent {
+      display: none;
+      width: 100% !important;
+    }
+    .thumbnail{
+
+    }
+    .todosComponent {
+      display: none;
+      width: 100 !important;
+    }
+    .divList{
+
+    }
   }
+  }*/
   @media (min-width: 1200px) {
   }
   

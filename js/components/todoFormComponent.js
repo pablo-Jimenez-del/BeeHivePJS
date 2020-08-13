@@ -1,16 +1,15 @@
-class CommentFormComponent extends Component {
+class TodoFormComponent extends Component {
   constructor(parent) {
     super(parent);
     this.container.classList.add("commentFormComponent");
 
     this.formBackground = document.createElement("div");
     this.container.appendChild(this.formBackground);
-    this.formBackground.classList.add("formBackground");
-    this.formBackground.style.transition = '1s ease-in';
+    this.formBackground.classList.add("formBackgroundTodo");
 
     this.titleComment = document.createElement("h2");
     this.titleComment.classList.add("titleComment");
-    this.titleComment.innerHTML = "Deja tu comentario";
+    this.titleComment.innerHTML = "Agregar nuevo todo";
     this.formBackground.appendChild(this.titleComment);
 
     this.lineCommentTitle = document.createElement("hr");
@@ -29,48 +28,32 @@ class CommentFormComponent extends Component {
 
     this.iconOne = document.createElement("i");
     this.iconOne.innerText = "Titulo";
-    this.iconOne.setAttribute('class', 'fas fa-marker');
+    this.iconOne.setAttribute("class", "fas fa-marker");
     this.labelTitulo.appendChild(this.iconOne);
 
     this.inputTitulo = document.createElement("input");
-    this.inputTitulo.classList.add("inputTitulo");
+    this.inputTitulo.classList.add("inputTituloForm");
     this.inputTitulo.placeholder = "Titulo";
-    this.inputTitulo.id = "inputTitleForm";
+    this.inputTitulo.id = "inputTitleFormTodo";
     this.field.appendChild(this.inputTitulo);
 
     this.field = document.createElement("div");
     this.field.classList.add("field");
     this.form.appendChild(this.field);
 
-    this.labelMessage = document.createElement("label");
-    this.field.appendChild(this.labelMessage);
-
-    this.iconMessage = document.createElement("i");
-    this.iconMessage.innerHTML = "Comentario";
-    this.iconMessage.setAttribute('class', 'fas fa-edit');
-    this.labelMessage.appendChild(this.iconMessage);
-
-    this.textareaMessage = document.createElement("textarea");
-    this.textareaMessage.classList.add("textareaMessage");
-    this.textareaMessage.id = "textareaForm";
-    this.textareaMessage.placeholder = "Comentario";
-    this.field.appendChild(this.textareaMessage);
-
-
-
     this.cancelBtn = document.createElement("button");
     this.cancelBtn.innerHTML = "Cancelar";
     this.formBackground.appendChild(this.cancelBtn);
-    this.cancelBtn.classList.add("cancelBtnCommentPost");
+    this.cancelBtn.classList.add("cancelBtnNewTodo");
     this.cancelBtn.onclick = this.onCancelButton.bind(this);
 
     this.enviarBtn = document.createElement("button");
     this.enviarBtn.innerHTML = "Enviar";
     this.formBackground.appendChild(this.enviarBtn);
-    this.enviarBtn.classList.add("enviarBtnCommentPost");
+    this.enviarBtn.classList.add("enviarBtnNewTodo");
     this.enviarBtn.onclick = this.onEnviarButton.bind(this);
 
-    //No se muestra el formulario de añadir comentario
+    //No se muestra el formulario del nuevo post
     this.hide();
   }
 
@@ -86,41 +69,27 @@ class CommentFormComponent extends Component {
   }
 
   onEnviarButton(e) {
-
     var title = this.inputTitulo.value;
-    var body = this.textareaMessage.value;
 
-    var inputTitleForm = document.getElementById("inputTitleForm");
-    var textareaForm = document.getElementById("textareaForm");
+    var inputTitleFormTodo = document.getElementById("inputTitleFormTodo");
+    var formTitleTodo = inputTitleFormTodo.value;
 
-    var formTitle = inputTitleForm.value;
-    var formBody = textareaForm.value;
-
-    if (formTitle == "") {
+    if (formTitleTodo == "") {
       Swal.fire({
         icon: "warning",
         title: "El titulo está vacío",
       });
       return false;
-
-    } else if (formBody == "") {
-      Swal.fire({
-        icon: "warning",
-        title: "El comentario está vacío",
-      });
-      return false;
-
     } else {
       Swal.fire({
         position: "Center",
         icon: "success",
-        title: "Comentario Añadido",
+        title: "Post Añadido",
         showConfirmButton: false,
         timer: 1900,
       });
-      document.getElementById("inputTitleForm").value = "";
-      document.getElementById("textareaForm").value = "";
+      document.getElementById("inputTitleFormTodo").value = "";
     }
-    AppManager.getInstance().uiManager.addNewComment(title, body);
+    AppManager.getInstance().uiManager.addNewTodo(title);
   }
 }

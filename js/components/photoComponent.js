@@ -7,8 +7,8 @@ class PhotoComponent extends Component {
     this.img = null;
 
     this.enviarBtn = document.createElement("button");
-    this.enviarBtn.innerHTML = "Ok";
-    this.enviarBtn.classList.add("enviarBtn");
+    this.enviarBtn.innerHTML = "Cerrar";
+    this.enviarBtn.classList.add("cerrarBtnPhoto");
     this.enviarBtn.onclick = this.onEnviarButton.bind(this);
     this.container.appendChild(this.enviarBtn);
 
@@ -21,6 +21,7 @@ class PhotoComponent extends Component {
     this.img = document.createElement("img");
     this.img.src = photo.url;
     this.img.classList.add("photo");
+    this.img.classList.add('img-fluid');
     this.container.appendChild(this.img);
     this.container.appendChild(this.enviarBtn);
     this.show();
