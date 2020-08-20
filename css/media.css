@@ -1,79 +1,115 @@
-@media (max-width: 500px) {
-    .beesComponent {
-      width: 100% !important;
-    }
-    .postsComponent {
-      display: none;
-      width: 100% !important;
-    }
-    .btnAddComment{
-      margin-left: 141px;
-    }
-    .albumComponent {
-      display: none;
-      width: 100% !important;
-    }
-    .thumbnail{
-      width: 60%;
-    }
-    .todosComponent {
-      display: none;
-      width: 100 !important;
-    }
-    .divList{
-      width: 100%;
-    }
+@media (min-width: 500px) and (max-width: 768px) {
+  .beesComponent {
+    width: 100% !important;
   }
+  .postsComponent {
+    display: none;
+    width: 100% !important;
+  }
+  .albumComponent {
+    display: none;
+    width: 100% !important;
+  }
+  .thumbnail {
+    width: 50%;
+  }
+  .todosComponent {
+    display: none;
+    width: 100% !important;
+  }
+  .todoComponent{
+    width: 100%;
+  }
+  .divList {
+    width: 100%;
+  }
+  .divList ul li label p {
+    width: 551px;
+    max-width: 205px;
+    color: #000;
+    margin-left: -28px;
+  }
+  .beeHiveTitle {
+    margin-top: -54px;
+  }
+  .iconPrevious {
+    display: block !important;
+  }
+  .postBtn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 6px;
+  }
+  .divList ul li label p{
+    max-width: 335px;
+  }
+  .albumBtn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 6px;
+  }
+  .todoBtn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 6px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .beesComponent {
+    width: 50% !important;
+  }
+  .postsComponent {
+    width: 50% !important;
+  }
+  .albumComponent {
+    display: none;
+    width: 50% !important;
+  }
+  .todosComponent {
+    display: none;
+    width: 50% !important;
+  }
+  .todoComponent{
+    width: 100%;
+  }
+  .divList{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  .divList ul li label p{
+    max-width: 295px !important;
+  }
+  .iconPrevious {
+    display: block !important;
+  }
+  .albumBtn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 6px;
+  }
+  .todoBtn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 6px;
+  }
+  .beeHiveTitle {
+    margin-top: -54px;
+  }
+}
 
-/* @media (max-width: 575px) {
-    .beesComponent {
-      width: 50%;
-    }
-    .postsComponent {
-      width: 50%;
-    }
-    .albumComponent {
-      display: none;
-      width: 50%;
-    }
-    .todosComponent {
-      display: none;
-      width: 50%;
-    }
-  } */
-  @media (min-width: 576px) and (max-width: 767px) {
-  }
-  @media (min-width: 768px) and (max-width: 991px) {
-  }
-  
 
-  /*Tablet
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .beesComponent {
-      width: 1000% !important;
-    }
-    .postsComponent {
-      width: 100% !important;
-    }
-    .btnAddComment{
-   
-    }
-    .albumComponent {
-      display: none;
-      width: 100% !important;
-    }
-    .thumbnail{
-
-    }
-    .todosComponent {
-      display: none;
-      width: 100 !important;
-    }
-    .divList{
-
-    }
+@media (min-width: 1200px) {
+  .beesComponent {
+    display: block !important;
   }
-  }*/
-  @media (min-width: 1200px) {
+  .postsComponent {
+    display: block !important;
   }
-  
+  .albumComponent {
+    display: block !important;
+  }
+  .todosComponent {
+    display: block !important;
+  }
+}

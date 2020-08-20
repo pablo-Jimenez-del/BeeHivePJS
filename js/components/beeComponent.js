@@ -5,8 +5,6 @@ class BeeComponent extends Component {
     this.container.id = "beeComponent";
     this.container.classList.add("beeComponent");
 
-
-
     //Añado los Bees name, username etc
     //Model viene del modelo Bee
 
@@ -14,7 +12,11 @@ class BeeComponent extends Component {
     beeImage.src = model.image;
     beeImage.classList.add("beeImage");
     this.container.appendChild(beeImage);
-    gsap.from(beeImage, {duration: 5, opacity: 0, ease: "slow(0.5, 0.8, true)"});
+    gsap.from(beeImage, {
+      duration: 5,
+      opacity: 0,
+      ease: "slow(0.5, 0.8, true)",
+    });
 
     var beeName = document.createElement("p");
     beeName.innerHTML = model.name;
@@ -41,36 +43,27 @@ class BeeComponent extends Component {
     beeCity.classList.add("beeCity");
     this.container.appendChild(beeCity);
 
-
-    this.divButtons = document.createElement("div");
-    this.divButtons.classList.add("divButtons");
-    this.container.appendChild(this.divButtons);
-
     this.buttonPost = document.createElement("button");
     this.buttonPost.innerHTML = "Posts";
-    this.buttonPost.classList.add('btn');
-    this.buttonPost.classList.add('postBtn');
-    this.divButtons.appendChild(this.buttonPost);
+    this.buttonPost.classList.add("postBtn");
+    this.container.appendChild(this.buttonPost);
     this.buttonPost.onclick = this.onBtnPost.bind(this);
 
     this.buttonAlbum = document.createElement("button");
     this.buttonAlbum.innerHTML = "Album";
-    this.buttonAlbum.classList.add('btn');
-    this.buttonAlbum.classList.add('albumBtn');
-    this.divButtons.appendChild(this.buttonAlbum);
+    this.buttonAlbum.classList.add("albumBtn");
+    this.container.appendChild(this.buttonAlbum);
     this.buttonAlbum.onclick = this.onBtnAlbum.bind(this);
 
     this.buttonTodo = document.createElement("button");
     this.buttonTodo.innerHTML = "Todo";
-    this.buttonTodo.classList.add('btn');
-    this.buttonTodo.classList.add('todoBtn');
-    this.divButtons.appendChild(this.buttonTodo);
+    this.buttonTodo.classList.add("todoBtn");
+    this.container.appendChild(this.buttonTodo);
     this.buttonTodo.onclick = this.onBtnTodo.bind(this);
 
-    this.raya = document.createElement('hr');
-    this.raya.classList.add('raya');
-    this.divButtons.appendChild(this.raya);
-
+    this.raya = document.createElement("hr");
+    this.raya.classList.add("raya");
+    this.container.appendChild(this.raya);
 
     //Cada vez que hago click que muestre el modelo del usuario(osea el bee)
     this.container.onclick = this.onContainerClick.bind(this);
@@ -81,12 +74,37 @@ class BeeComponent extends Component {
   }
 
   onBtnPost(e) {
-    console.log("x1");
+    document.getElementById("postsComponent").style.display = "block";
+    document.getElementById("beesComponent").style.display = "none";
   }
   onBtnAlbum(e) {
-    console.log("x2");
+    var mediaqueryList = window.matchMedia(
+      "(min-width: 500px) and (max-width: 768px)"
+    );
+
+    if (mediaqueryList.matches) {
+      document.getElementById("albumComponent").style.display = "block";
+      document.getElementById("beesComponent").style.display = "none";
+    } else {
+      document.getElementById("albumComponent").style.display = "block";
+      document.getElementById("postsComponent").style.display = "none";
+    }
+    // document.getElementById("postsComponent").style.display = "none";
   }
   onBtnTodo(e) {
-    console.log("x3");
+    var mediaqueryList = window.matchMedia(
+      "(min-width: 500px) and (max-width: 768px)"
+    );
+
+    if (mediaqueryList.matches) {
+      document.getElementById("todosComponent").style.display = "block";
+      document.getElementById("beesComponent").style.display = "none";
+    } else {
+
+
+      document.getElementById("todosComponent").style.display = "block";
+      document.getElementById("albumComponent").style.display = "none";
+    } 
+    // document.getElementById("albumComponent").style.display = "none";
   }
 }
